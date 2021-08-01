@@ -1,2 +1,45 @@
 .final {
+  position: relative;
+
+  &__left {
+    position: absolute;
+    width: 380px;
+    background-color: #86d3f4;
+    z-index: 22;
+    height: 720px;
+  }
+
+  &__right {
+    position: absolute;
+  }
+
+  &__success {
+    text-align: center;
+    display: flex;
+    align-items: center;
+
+    &--center {
+      padding: 52px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-right: -50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+.left {
+  &__title {
+    margin: 0;
+    margin-bottom: 15px;
+    font-size: 32px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  &__text {
+    font-size: 14px;
+    font-weight: 400;
+  }
 }
