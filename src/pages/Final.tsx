@@ -1,4 +1,5 @@
 import React from 'react';
+import { BtnClose } from '../components/BtnClose';
 import '../styles/final.scss';
 
 export const Final = () => {
@@ -16,6 +17,7 @@ export const Final = () => {
             <div className="final__right">
                 <img src="images/final/wallpaper.png" alt="" />
                 <div className="right__up">
+                    <BtnClose />
                 </div>
                 <div className="right__down">
                 </div>

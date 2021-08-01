@@ -1,2 +1,49 @@
 .btn-block {
+  top: 0;
+  right: 0;
+  position: absolute;
+  margin: 20px;
+}
+
+.btn-close {
+  padding: 0;
+  width: 88px;
+  height: 52px;
+  position: relative;
+  background-color: #fff;
+  border: 2px solid #000000;
+  transition: all 0.3s ease-in-out;
+
+  &--lineFirst {
+    transform: rotate(-45deg);
+  }
+
+  &--lineSecond {
+    transform: rotate(45deg);
+  }
+
+  &--lineSecond,
+  &--lineFirst {
+    transition: all 0.3s ease-in-out;
+    width: 29px;
+    position: absolute;
+    height: 3px;
+    background-color: #000;
+  }
+
+  &__lines {
+    position: relative;
+    right: 12px;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+  }
+
+  &:hover {
+    .btn-close--lineSecond,
+    .btn-close--lineFirst {
+      background-color: #fff;
+    }
+
+    background-color: #000;
+  }
 }
