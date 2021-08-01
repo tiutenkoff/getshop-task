@@ -1,2 +1,20 @@
 .banner {
+  position: relative;
+}
+
+.banner__image {
+  position: absolute;
+
+  &--QR {
+    z-index: 2;
+    right: 0;
+    top: 220px;
+  }
+
+  &--BTN {
+    z-index: 3;
+    top: 538px;
+    right: 47px;
+    cursor: pointer;
+  }
 }
