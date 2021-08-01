@@ -1,18 +1,4 @@
 .final {
-  position: relative;
-
-  &__left {
-    position: absolute;
-    width: 380px;
-    background-color: #86d3f4;
-    z-index: 22;
-    height: 720px;
-  }
-
-  &__right {
-    position: absolute;
-  }
-
   &__success {
     text-align: center;
     display: flex;

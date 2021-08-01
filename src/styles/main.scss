@@ -1,0 +1,100 @@
+.main {
+  &__success {
+    text-align: center;
+    display: flex;
+    align-items: center;
+
+    &--center {
+      padding: 48px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-right: -50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 26px;
+    font-weight: 400;
+  }
+
+  &__telephone {
+    font-size: 32px;
+    font-weight: 700;
+    padding: 13px;
+  }
+
+  &__text {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  &__keyboard {
+    margin-top: 33px;
+    margin-bottom: 33px;
+    display: grid;
+    grid-template-areas:
+      'one two three'
+      'four five six'
+      'seven eight nine'
+      'delete delete null';
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px;
+
+    & > div {
+      padding: 12px 30px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 500;
+      color: #000;
+      text-transform: uppercase;
+      border: 2px solid #000;
+      text-align: center;
+      align-items: center;
+      background-color: transparent;
+      transition: color 0.2s ease-in, background-color 0.2s ease-in;
+      &:hover {
+        background-color: #000;
+        color: #fff;
+      }
+    }
+  }
+}
+
+#one {
+  grid-area: one;
+}
+#two {
+  grid-area: two;
+}
+#three {
+  grid-area: three;
+}
+#four {
+  grid-area: four;
+}
+#five {
+  grid-area: five;
+}
+#six {
+  grid-area: six;
+}
+#seven {
+  grid-area: seven;
+}
+#eight {
+  grid-area: eight;
+}
+#nine {
+  grid-area: nine;
+}
+#null {
+  grid-area: null;
+}
+#delete {
+  grid-area: delete;
+}

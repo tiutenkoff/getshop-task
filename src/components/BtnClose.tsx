@@ -12,4 +12,4 @@ export const BtnClose = () => {
             </button>
         </div>
     )
-}
+};
