@@ -1,2 +1,17 @@
 .qr-code {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  max-width: 314px;
+  align-items: center;
+  margin: 40px;
+  &__text {
+    text-align: right;
+    margin-right: 10px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
 }
