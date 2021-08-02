@@ -1,0 +1,55 @@
+.agreement {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  &__checkbox {
+    border: 2px solid #000;
+    min-width: 40px;
+    min-height: 40px;
+    margin: 10px;
+    margin-right: 20px;
+  }
+  &__text {
+    color: rgba(86, 86, 86, 1);
+    text-align: left;
+    font-size: 14px;
+    font-weight: 400;
+  }
+}
+
+.checkbox {
+  padding: 0;
+  width: 88px;
+  height: 52px;
+  position: relative;
+  background-color: #fff;
+  border: 2px solid #000000;
+  transition: all 0.2s ease-in-out;
+
+  &--lineSecond,
+  &--lineFirst {
+    transition: all 0.2s ease-in-out;
+    width: 24px;
+    position: absolute;
+    height: 3px;
+    background-color: #000;
+  }
+  &--lineFirst {
+    transform: rotate(-45deg);
+  }
+
+  &--lineSecond {
+    transform: rotate(45deg);
+    width: 13px;
+    top: 3.4px;
+    left: 12px;
+  }
+
+  &__lines {
+    position: relative;
+    top: 17px;
+    right: 8px;
+    align-items: center;
+    transition: all 0.2s ease-in-out;
+  }
+}

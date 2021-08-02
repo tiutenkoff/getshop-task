@@ -1,0 +1,19 @@
+.confirm {
+  margin-top: 19px;
+  &__btn {
+    background: transparent;
+    text-transform: uppercase;
+    padding: 0;
+    color: #4e4e4e;
+    border: 1px solid #4e4e4e;
+    width: 100%;
+    line-height: 19px;
+    padding: 16px 0;
+    transition: all 0.2s ease-in;
+
+    &:hover {
+      background: #000;
+      color: #fff;
+    }
+  }
+}
