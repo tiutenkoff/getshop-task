@@ -27,6 +27,18 @@ export const Main = () => {
                             <div id="delete" data-number="delete">Стереть</div> 
                             <div id="null" data-number="0">0</div> 
                         </div>
+                        <div className="agreement">
+                            <div className="agreement__checkbox">
+                            <div className="checkbox__lines">
+                                <span className="checkbox--lineFirst"></span>
+                                <span className="checkbox--lineSecond"></span>
+                            </div>
+                            </div>
+                            <p className="agreement__text">Согласие на обработку персональных данных</p>
+                        </div>
+                        <div className="confirm">
+                            <button className="confirm__btn">Подтвердить номер</button>
+                        </div>
                     </div>
                 </div>
             
