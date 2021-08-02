@@ -1,16 +1,21 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 import { Agreement } from '../components/Agreement';
 import { BtnClose } from '../components/BtnClose';
 import { BtnConfirm } from '../components/BtnConfirm';
 import { Keyboard } from '../components/Keyboard';
 import { QRcode } from '../components/QRcode';
+import { IPhoneNumber, ICheckCorrect } from '../types/types';
 
 import '../styles/main.scss';
 
 export const Main: React.FC = () => {
     const [telephoneNumbers, setTelephoneNumbers]  = React.useState<Array<any>>(Array(16).fill('_'));
     const [isAgree, setIsAgree] = React.useState<boolean>(false);
+    const [currentTelephone, setCurrentTelephone] = React.useState<IPhoneNumber>({ currentNumber: 0, isConfirmed: false});
+    const [checkingCorrect, setCheckingCorrect] = React.useState<ICheckCorrect>({isAgree: false, isConfirm: false});
+
 
     const initialState = () => {
         setTelephoneNumbers(telephoneNumbers.map((_, i) => {
@@ -32,11 +37,27 @@ export const Main: React.FC = () => {
     const changeAgreement = () => {
         setIsAgree(prev => prev = !prev);
     };
-
     const handleClickKeyboard = (data: number | string) => {
+        if (currentTelephone.currentNumber === 9) {
+            setCurrentTelephone(prev => ({
+                ...prev,
+                isConfirmed: true,
+            }))
+    } else {
+        setCurrentTelephone(prev => ({
+            ...prev, 
+            currentNumber: prev.currentNumber + 1,
+        }));
+    }
+
         if (data === 'delete') {
             console.log(data);
             initialState();
+            setCurrentTelephone(prev => ({
+                ...prev, 
+                currentNumber: 0,
+                isConfirmed: false,
+            }));
         }
         else {
             let copyTelephone = [...telephoneNumbers];
@@ -50,17 +71,60 @@ export const Main: React.FC = () => {
         }
     };
 
+    const clickHandler = () => {
+        if (!currentTelephone.isConfirmed) {
+            setCheckingCorrect(prev => ({
+                ...prev,
+                isConfirm: true
+            }))
+        }
+        else if (!isAgree) {
+            setCheckingCorrect(prev => ({
+                ...prev,
+                isAgree: true
+            }))
+        }
+
+        setTimeout(() => {
+            setCheckingCorrect(prev => ({
+                ...prev,
+                isConfirm: false,
+                isAgree: false,
+            }))  
+        }, 2000)
+    };
+
+
+
     return (
         <div className="side-page">
             <div className="side-page__left">
                 <div className="main__success">
                     <div className="main__success--center">
                         <h2 className="main__title">Введите ваш номер мобильного телефона</h2>
-                        <h1 className="main__telephone">{telephoneNumbers.join('')}</h1>
+                        {
+                            
+                        }
+                        <h1 className={`main__telephone ${checkingCorrect.isConfirm ? 'isRight' : ''}`}>{telephoneNumbers.join('')}</h1>
                         <p className="main__text">и с Вами свяжется наш менеждер для дальнейшей консультации</p>
-                        <Keyboard onClick={handleClickKeyboard}/>
-                        <Agreement toggleAgreement={changeAgreement} isAgree={isAgree}/>
-                        <BtnConfirm />
+                        <Keyboard onClick={handleClickKeyboard} />
+                        {
+                            checkingCorrect.isConfirm
+                                ? <p className="isRight">Неверно введен номер</p>
+                                : checkingCorrect.isAgree
+                                    ? <p className="isRight">Дайте свое согласие на обработку ПД</p>
+                                    : <Agreement toggleAgreement={changeAgreement} isAgree={isAgree} />
+                                
+                        }
+                        
+                        {
+                            !(isAgree && currentTelephone.isConfirmed)
+                                ? <BtnConfirm  onClickFinal={clickHandler} />
+                                : <NavLink to="/final">
+                                    <BtnConfirm onClickFinal={clickHandler} />
+                                </NavLink>
+                        }
+                        
                     </div>
                 </div>
             
