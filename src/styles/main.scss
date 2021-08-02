@@ -23,7 +23,7 @@
   &__telephone {
     font-size: 32px;
     font-weight: 700;
-    margin: 13px;
+    margin: 13px 0;
   }
 
   &__text {
@@ -31,38 +31,4 @@
     font-size: 14px;
     font-weight: 400;
   }
-}
-
-#one {
-  grid-area: one;
-}
-#two {
-  grid-area: two;
-}
-#three {
-  grid-area: three;
-}
-#four {
-  grid-area: four;
-}
-#five {
-  grid-area: five;
-}
-#six {
-  grid-area: six;
-}
-#seven {
-  grid-area: seven;
-}
-#eight {
-  grid-area: eight;
-}
-#nine {
-  grid-area: nine;
-}
-#null {
-  grid-area: null;
-}
-#delete {
-  grid-area: delete;
 }
