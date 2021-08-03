@@ -1,20 +1,40 @@
 .banner {
   position: relative;
-}
 
-.banner__image {
-  position: absolute;
-
-  &--QR {
-    z-index: 2;
+  &__next {
+    width: 251px;
+    position: absolute;
     right: 0;
-    top: 220px;
+    top: 229px;
+    background-color: #86d3f4;
+    text-align: center;
+    padding: 20px 10px 10px 10px;
   }
 
-  &--BTN {
-    z-index: 3;
-    top: 538px;
-    right: 47px;
+  &__title {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  &__text {
+    margin: 20px 0;
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  &__btn {
+    width: 156px;
+    padding: 16.5px 0;
+    color: rgba(134, 211, 244, 1);
+    background-color: #000;
+    border: none;
     cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    &:hover {
+      color: #fff;
+      background-color: lighten(#000, 15%);
+    }
   }
 }
