@@ -1,46 +1,48 @@
-# Getting Started with Create React App
+# Test task for getshop
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Описание задания:
 
-## Available Scripts
+Необходимо реализовать вёрстку экранов микросайта, а также навигацию и механизм ввода номера при помощи экранной клавиатуры. Кнопка «Получить предложение» должна становиться доступной для выбора (enabled) только при полностью введенном номере и согласии с обработкой ПД. Валидацию номера проводить не нужно, достаточно проверять, что номер введен полностью. Неинтерактивные статичные элементы (включая текст) разрешается не верстать, а использовать как часть (фоновой) картинки
 
-In the project directory, you can run:
+## Требования:
 
-### `yarn start`
+- Используйте React (использование TypeScript будет плюсом)
+- Если сочтете нужным, можете использовать сторонние библиотеки.
+- Разрешение микросайта фиксированное, 1280х720.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Выполненные бонусные задания:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- добавить видео (отрывок около минуты длиной, к примеру отсюда) и баннер, появляющийся через 5 секунд от начала проигрывания ролика;
+- добавить автоматическое масштабирование микросайта под любое разрешение (в соотношении 16:9);
+- добавить валидацию номера при помощи открытого сервиса (https://numverify.com/documentation).
 
-### `yarn test`
+## Использованные технологии и инструменты:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![React + хуки](https://img.shields.io/badge/-React+хуки-282727?style=for-the-badge)
+<br>![TypeScript](https://img.shields.io/badge/-TypeScript-282727?style=for-the-badge)
+<br>![numverify](https://img.shields.io/badge/-numverify-282727?style=for-the-badge)
+<br>![SCSS](https://img.shields.io/badge/-SCSS-282727?style=for-the-badge)
 
-### `yarn build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Перед запуском необходимо:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Установить Node.js:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+   [Установить Node.js (ссылка)](https://nodejs.org/en/)
 
-### `yarn eject`
+2. Обновить пакеты:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```
+$ npm i
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Запуск проекта:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- Запуск локального сервера:
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+$ yarn start (npm start)
+```
