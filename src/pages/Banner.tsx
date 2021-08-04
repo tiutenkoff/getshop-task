@@ -21,7 +21,7 @@ export const Banner: React.FC = () => {
                 <h3 className="banner__title">Исполните мечту вашего малыша!<br/>Подарите ему собаку!</h3>
                 <img src="images/final/qrcode.png" alt="" />
                 <p className="banner__text">Сканируйте QR-код<br/> или нажмите ОК</p>
-                <NavLink to="/main">
+                <NavLink to="main">
                     <button className="banner__btn">ОК</button>
                 </NavLink>
             </div>
