@@ -1,20 +1,20 @@
 {
   "files": {
     "main.css": "/getshop-task/static/css/main.ad1af3c1.chunk.css",
-    "main.js": "/getshop-task/static/js/main.59ec459c.chunk.js",
-    "main.js.map": "/getshop-task/static/js/main.59ec459c.chunk.js.map",
+    "main.js": "/getshop-task/static/js/main.45e12b47.chunk.js",
+    "main.js.map": "/getshop-task/static/js/main.45e12b47.chunk.js.map",
     "runtime-main.js": "/getshop-task/static/js/runtime-main.a93de247.js",
     "runtime-main.js.map": "/getshop-task/static/js/runtime-main.a93de247.js.map",
-    "static/js/2.ca096be7.chunk.js": "/getshop-task/static/js/2.ca096be7.chunk.js",
-    "static/js/2.ca096be7.chunk.js.map": "/getshop-task/static/js/2.ca096be7.chunk.js.map",
+    "static/js/2.cc62ed75.chunk.js": "/getshop-task/static/js/2.cc62ed75.chunk.js",
+    "static/js/2.cc62ed75.chunk.js.map": "/getshop-task/static/js/2.cc62ed75.chunk.js.map",
     "index.html": "/getshop-task/index.html",
     "static/css/main.ad1af3c1.chunk.css.map": "/getshop-task/static/css/main.ad1af3c1.chunk.css.map",
-    "static/js/2.ca096be7.chunk.js.LICENSE.txt": "/getshop-task/static/js/2.ca096be7.chunk.js.LICENSE.txt"
+    "static/js/2.cc62ed75.chunk.js.LICENSE.txt": "/getshop-task/static/js/2.cc62ed75.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.a93de247.js",
-    "static/js/2.ca096be7.chunk.js",
+    "static/js/2.cc62ed75.chunk.js",
     "static/css/main.ad1af3c1.chunk.css",
-    "static/js/main.59ec459c.chunk.js"
+    "static/js/main.45e12b47.chunk.js"
   ]
 }
