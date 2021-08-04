@@ -1,6 +1,6 @@
 import React from 'react';
 import '../styles/banner.scss';
-import { NavLink} from 'react-router-dom'
+import { Link} from 'react-router-dom'
 
 export const Banner: React.FC = () => {
     const [showBanner, setShowbanner] = React.useState(false);
@@ -21,9 +21,9 @@ export const Banner: React.FC = () => {
                 <h3 className="banner__title">Исполните мечту вашего малыша!<br/>Подарите ему собаку!</h3>
                 <img src="images/final/qrcode.png" alt="" />
                 <p className="banner__text">Сканируйте QR-код<br/> или нажмите ОК</p>
-                <NavLink to="/main">
+                <Link to="main">
                     <button className="banner__btn">ОК</button>
-                </NavLink>
+                </Link>
             </div>
             <video width="1280" height="720" autoPlay muted >
                 <source src="videos/videobanner.mp4"/>
