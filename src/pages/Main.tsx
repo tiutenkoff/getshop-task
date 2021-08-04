@@ -149,7 +149,7 @@ export const Main: React.FC = () => {
                         {
                             !(isAgree && currentTelephone.isConfirmed && isValidate)
                                 ? <BtnConfirm  onClickFinal={clickHandler} />
-                                : <NavLink to="final">
+                                : <NavLink to="/final">
                                     <BtnConfirm onClickFinal={clickHandler} />
                                 </NavLink>
                         }

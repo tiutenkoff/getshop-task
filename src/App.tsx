@@ -11,9 +11,9 @@ const App: React.FC = () => {
       <div className="wrapper">
         <div className="container">
           <Switch>
-            <Route exact path="" component={Banner}/>
-            <Route exact path="main" component={Main} />
-            <Route exact path="final" component={Final} />
+            <Route exact path="/" component={Banner}/>
+            <Route exact path="/main" component={Main} />
+            <Route exact path="/final" component={Final} />
           </Switch>
         </div>
       </div>

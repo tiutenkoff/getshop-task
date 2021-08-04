@@ -5,7 +5,7 @@ import '../styles/btnClose.scss';
 
 export const BtnClose = () => {
     return (
-        <NavLink to="">
+        <NavLink to="/">
             <div className="btn-block">
                 <button className="btn-close">
                     <div className="btn-close__lines">
