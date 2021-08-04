@@ -1,4 +1,5 @@
 export interface IPhoneNumber {
+    telephone: string;
     currentNumber: number;
     isConfirmed: boolean;
 }

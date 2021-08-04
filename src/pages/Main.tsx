@@ -13,9 +13,12 @@ import '../styles/main.scss';
 export const Main: React.FC = () => {
     const [telephoneNumbers, setTelephoneNumbers]  = React.useState<Array<any>>(Array(16).fill('_'));
     const [isAgree, setIsAgree] = React.useState<boolean>(false);
-    const [currentTelephone, setCurrentTelephone] = React.useState<IPhoneNumber>({ currentNumber: 0, isConfirmed: false});
+    const [currentTelephone, setCurrentTelephone] = React.useState<IPhoneNumber>({ telephone: '', currentNumber: 0, isConfirmed: false});
     const [checkingCorrect, setCheckingCorrect] = React.useState<ICheckCorrect>({isAgree: false, isConfirm: false});
+    const [isValidate, setIsValidate] = React.useState<boolean>(false);
 
+    let accessKeyValidate = 'e610a2d5d0ba6c99699e781f4347ff31';
+    let urlValidate = 'http://apilayer.net/api/validate?access_key=' + accessKeyValidate + '&number=' + currentTelephone.telephone + '&country_code=RU' + '&format=1';
 
     const initialState = () => {
         setTelephoneNumbers(telephoneNumbers.map((_, i) => {
@@ -34,6 +37,24 @@ export const Main: React.FC = () => {
         initialState();
     }, [])
 
+    const fetched = async () => {
+        if (currentTelephone.telephone.length === 10)
+        {
+            await fetch(urlValidate).then(res => res.json()).then(({ valid }) => {
+                if (valid === true) {
+                    setIsValidate(true)
+                }
+                else {
+                    setIsValidate(false)
+                }
+            })
+        }
+    };
+
+    React.useEffect(() => {
+        fetched();
+    }, [currentTelephone.telephone])
+
     const changeAgreement = () => {
         setIsAgree(prev => prev = !prev);
     };
@@ -43,7 +64,7 @@ export const Main: React.FC = () => {
                 ...prev,
                 isConfirmed: true,
             }))
-    } else {
+        } else {
         setCurrentTelephone(prev => ({
             ...prev, 
             currentNumber: prev.currentNumber + 1,
@@ -51,10 +72,10 @@ export const Main: React.FC = () => {
     }
 
         if (data === 'delete') {
-            console.log(data);
             initialState();
             setCurrentTelephone(prev => ({
-                ...prev, 
+                ...prev,
+                telephone: '',
                 currentNumber: 0,
                 isConfirmed: false,
             }));
@@ -67,12 +88,20 @@ export const Main: React.FC = () => {
                        break;
                     }
             }
+            if (currentTelephone.currentNumber < 10) {
+                setCurrentTelephone(prev => ({
+                    ...prev,
+                    telephone: prev.telephone + data,
+                }));
+            }
             setTelephoneNumbers(copyTelephone);
         }
     };
 
+
     const clickHandler = () => {
-        if (!currentTelephone.isConfirmed) {
+        if (!isValidate) {
+            console.log('yes', isValidate)
             setCheckingCorrect(prev => ({
                 ...prev,
                 isConfirm: true
@@ -118,7 +147,7 @@ export const Main: React.FC = () => {
                         }
                         
                         {
-                            !(isAgree && currentTelephone.isConfirmed)
+                            !(isAgree && currentTelephone.isConfirmed && isValidate)
                                 ? <BtnConfirm  onClickFinal={clickHandler} />
                                 : <NavLink to="/final">
                                     <BtnConfirm onClickFinal={clickHandler} />
